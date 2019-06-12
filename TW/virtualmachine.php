@@ -1,3 +1,9 @@
+<?php
+include('server.php');
+if (!isset($_SESSION['user_s'])) {
+  header("Location: index.php");
+}
+?>
 
 
 <!DOCTYPE html>
@@ -11,20 +17,17 @@
 <body>
 
 
-<form action="index.php">
+<form action="logout.php">
     <input type="submit" name="log_out" value="Log out" />
 </form>
 
 <?php
 
-
-include('server.php');
-$usernames = $_SESSION['Username'];
+$usernames = $_SESSION['user_s'];
 $user_check_query2 = "SELECT Id from users WHERE Username='$usernames' LIMIT 1";
 		$result = mysqli_query ($db , $user_check_query2);
 		$user = mysqli_fetch_array($result,MYSQLI_ASSOC);
 		$idU=$user['Id'];
-
 		$user_check_query = "SELECT idmachine from useraccess WHERE iduser=$idU";
 		$result1 = mysqli_query ($db , $user_check_query);
 		$count = 0;

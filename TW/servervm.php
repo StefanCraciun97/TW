@@ -1,6 +1,5 @@
 <?php
 session_start();
-
 // initializing variables
 	
 	$numevm ="";
@@ -8,7 +7,6 @@ session_start();
     $os="";
     $useracc="";
 	$errors = array(); 
-
 // connect to the database
 	$db = mysqli_connect('localhost', 'root', '', 'penguinix');
 	if(isset($_POST['addmachine'])){
@@ -36,7 +34,6 @@ session_start();
 			$r1= mysqli_query($db,$q);
 			$ro = mysqli_fetch_array($r1,MYSQLI_ASSOC);
 			if($ro['cnt']<1){array_push($errors,"Nu exista acest utilizator");}
-
 		//Finally , register user is there are no errors in the form
 		if(!count($errors)){
 			$query = "select id from users where username='$useracc'";
@@ -47,16 +44,12 @@ session_start();
 					VALUES ('$numevm','$ip','$os')";
 			mysqli_query($db, $query1);
 			
-
 			$query = "select * from virtualmachine where name= '$numevm'";
 			$res = mysqli_query($db,$query);
 			$arr1 = mysqli_fetch_array($res,MYSQLI_ASSOC);
 			$idvm = $arr1['idmachine'];
 			$query = "INSERT INTO useraccess values ($idacc,$idvm)";
 			mysqli_query($db,$query);	
-
 			$success_message = "<center>Ati adaugat masina virtuala cu succes!";
 		}
 	}
-	
-

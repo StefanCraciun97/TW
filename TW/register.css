@@ -19,11 +19,6 @@
     text-align: center;
     padding: 20px;
   }
-  .add{
-
-width: 30px;
-
-  }
 .register{
 position: absolute;
     right: 200px;
@@ -273,14 +268,10 @@ padding:10px 70px;
 }
 input[type=submit]
     {
-padding: 10px 100px;
+padding: 10px 125px;
 background-color: rgb(52, 142, 245);
 color:white;
 text-align: center;
-    }
-    .add
-    {
-        width: 40px;
     }
  }
 

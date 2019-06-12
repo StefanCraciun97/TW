@@ -19,7 +19,7 @@
 <input type="password" name="pass"
 placeholder="Introdu parola">
 <br/> <br/>
-<input type="submit" value="Login" name='login' onclick="window.location.href='file:///C:/Users/Denisa%20Irina/Desktop/TW/PROIECT/virtualmachine.php'" />
+<input type="submit" value="Login" name='login' onclick="window.location.href='virtualmachine.html'" />
 </form>
 Don't have an account?<a href="register.php">Sign Up</a>
 </div>

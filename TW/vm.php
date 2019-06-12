@@ -5,13 +5,18 @@
             <link rel="stylesheet" href="register.css">
 </head>
 <body background="ptTW.png">
+
+<form action="logout.php">
+    <input type="submit" name="log_out" value="Log out" />
+</form>
+
         <br/>
         <h1>penGUIniX Virtual Machine</h1>
 <div class="register">
     <br/>
         <img src="pencil-icon.png" alt="pencil-icon" style="float:left;width: 50px;height: 50px; ">
         <br/> <br/> <br/> <br/>
-        <?php include("erori.php"); ?>
+        <?php include("errors.php"); ?>
         <?php if(!empty($success_message)) { ?>	
 		<div class="success"><?php if(isset($success_message)) echo $success_message; ?>
         </div>
@@ -30,7 +35,7 @@
         <input type="password"
         placeholder="Root password" name="root">
         <br/> <br/>
-                <input type="submit" style="background-color=blue" value="Add Machine" class="add" name="addmachine" onclick="window.location.href='file:///C:/Users/Denisa%20Irina/Desktop/TW/PROIECT/virtualmachine.html'" />
+                <input type="submit" style="background-color=blue" value="Add Machine" class="add" name="addmachine" onclick="window.location.href='virtualmachine.html'" />
                 <!-- <button class="buton2">Register</button> -->
     </form>
 </div>

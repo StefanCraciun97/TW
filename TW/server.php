@@ -27,7 +27,7 @@ session_start();
 		if(empty($email)) { array_push($errors,"Trebuie sa introduceti email-ul.");}
 		if(empty($password_1)) { array_push($errors,"Trebuie sa introduceti parola.");}
 
-		if(strlen($password_1) < 5) {array_push($errors, "Parola trebuie sa aiba cel putin 5 caractere!");}
+		if(strlen($password_1) < 6) {array_push($errors, "Parola trebuie sa aiba cel putin 6 caractere!");}
 		if(!filter_var($email,FILTER_VALIDATE_EMAIL)){array_push($errors,"Introduceti un email valid!");}
 		if(!preg_match("/^[a-zA-Z]+$/",$nume)){array_push($errors,"Numele trebuie sa contina doar litere");}
 		if(!preg_match("/^[a-zA-Z ]+$/",$prenume)){array_push($errors,"Prenumele trebuie sa contina doar litere si spatii");}
@@ -52,7 +52,6 @@ session_start();
 					VALUES ('$nume','$prenume','$email','$username','$password')";
 			mysqli_query($db, $query);
 			$success_message = "<center>V-ati inregistrat cu succes! Acum va puteti autentifica!";
-			echo "<a href='index.php'>Login</a>";
 			}
 	}
 
@@ -69,30 +68,19 @@ if (isset($_POST['login'])) {
   }
 
   if (count($errors) == 0) {
-	  if($username == 'admin' && $password == 'admin'){
+		if($username == 'admin' && $password == 'admin'){
 			header('location:vm.php');
 		} else {
-		$password = base64_encode($password);;
+  	$password = base64_encode($password);
 		$q="SELECT * FROM users where Username='$username' and Parola='$password'";
+		//"SELECT * FROM users where Username='stef' --' and Parola='$password'";
 		$res = mysqli_query($db,$q);
-		if (mysqli_num_rows($res) == 1) {
-		$_SESSION['Username'] = $username;
-		$_SESSION['success'] = "Te-ai logat!";
-		header('location:virtualmachine.php');
-		} 
-	} }else {
+  	if (mysqli_num_rows($res) == 1) {
+  	  $_SESSION['user_s']=$username;
+	  header('location:virtualmachine.php');
+  	}else {
   		array_push($errors, "Username sau parola gresita.");
-  	}
-}
-
-//LOG OUT
-if (isset($_SESSION['log_out']))
-{
-    $que="UPDATE users 
-			SET log_in=NULL 
-			WHERE username='$username'";
-	  mysqli_query($db,$que);
-	  session_destroy();
-
-header('Location: login.php');
+		}
+	}
+  }
 }

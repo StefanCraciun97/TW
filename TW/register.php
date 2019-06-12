@@ -31,7 +31,8 @@
                 placeholder="Your password.." name = "password">
                 <br/> <br/>
                 <input type="submit" value="Register" name="register" onclick="window.location.href='virtualmachine.php'" />
-                <!-- <button class="buton2">Register</button> -->
+
+                <a href="index.php">Login</a>
     </form>
 </div>
 </body>
