@@ -51,5 +51,23 @@ session_start();
 			$query = "INSERT INTO useraccess values ($idacc,$idvm)";
 			mysqli_query($db,$query);	
 			$success_message = "<center>Ati adaugat masina virtuala cu succes!";
+
+
+			if(isset($_POST['test'])){
+
+				echo "test ok";
+				$q2="select count(idmachine) from virtualmachine";
+				$numar=mysqli_query($db,$q2);
+				echo $numar;
+			}
+			
+			//shell_exec("./sshKeys.sh 84.117.124.45 ")
+
+			
+
+
+
+
+
 		}
 	}

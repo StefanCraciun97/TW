@@ -1,0 +1,8 @@
+  PID TTY      STAT   TIME COMMAND
+ 1588 ?        Ss     0:00 /lib/systemd/systemd --user
+ 1589 ?        S      0:00 (sd-pam)
+ 1610 tty1     S      0:00 -bash
+ 1702 ?        Ss     0:00 ssh -Nf -R 11001:localhost:15000 tw@84.117.124.45
+ 1709 tty1     S+     0:00 ./a.out
+ 1772 tty1     S+     0:00 sh -c ps -x > output.txt 2>&1
+ 1773 tty1     R+     0:00 ps -x

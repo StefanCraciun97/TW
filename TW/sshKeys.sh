@@ -1,6 +1,5 @@
 # Automatic setup for ssh keys on VMs 
-# This script requires sshpass proogram in order to work
-# It also requires root password of VM to be written in a file called "pass"
+# This script requires sshpass program in order to work
 
 
 if [ "$3" == "" ] 

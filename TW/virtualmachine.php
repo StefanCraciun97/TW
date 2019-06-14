@@ -38,7 +38,7 @@ $user_check_query2 = "SELECT Id from users WHERE Username='$usernames' LIMIT 1";
 			$result2 = mysqli_query ($db , $user_check_query1);
 			$user = mysqli_fetch_array($result2,MYSQLI_ASSOC);
 			echo "<div class='div".++$count."'>";
-			echo "<p><a href='functionalitati.html'><img src='computer.png' alt='computer image' href='functionalitati.html'></a></p>";
+			echo "<p><a href='filtru.php?machine=$idV'><img src='computer.png' alt='computer image' href='filtru.php?machine=$idV'></a></p>";
 			echo "<p>".$user['name']."</p>";
 			echo "<p>".$user['ip']."</p>";
 			echo "<p>".$user['os']."</p>";

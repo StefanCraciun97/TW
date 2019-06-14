@@ -38,6 +38,13 @@
                 <input type="submit" style="background-color=blue" value="Add Machine" class="add" name="addmachine" onclick="window.location.href='virtualmachine.html'" />
                 <!-- <button class="buton2">Register</button> -->
     </form>
+
+    <form method="POST">
+        <input type="text">
+        <button type="submit" name="test">"Test"</button>
+    </form>
+
+
 </div>
 </body>
 </html>
