@@ -1,0 +1,24 @@
+ #Ne logam cu userul pe care l-am creat.
+ 
+ sudo passwd root  # trebuie sa introducem iar parola userului cu care suntem logati
+ 
+ #Introducem o parola pentru userul root.
+
+ exit
+ 
+ #Ne logam cu root si parola pe care tocmai am introdus-o.
+ 
+ #Descarcam agentul pentru masina virtuala (daca nu stii parola ma intrebi)
+ scp ursul@84.117.124.45:vmAgent.out .
+ 
+ #Descarcam programul sshpass
+ apt-get install sshpass
+ 
+ 
+ #Descarcam scriptul de startup pentru masini virtuale (aceeasi parola ca la comanda scp de mai sus)
+ 
+ scp ursul@84.117.124.45:vmStartupScript.sh .
+ 
+ #Executam scriptul de startup (urmatoarele dati cand pornim masina virtuala rulam doar aceasta ultima comanda)
+ 
+ ./vmStartupScript.sh

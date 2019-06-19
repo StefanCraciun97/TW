@@ -1,0 +1,12 @@
+ 
+create database penguinix;
+
+use penguinix;
+
+ 
+create table users(id_user int(6) primary key not null auto_increment, Nume varchar(40) not null, Prenume varchar(40) not null, Email varchar(60) not null, Username varchar(40) not null, Parola varchar(40) not null);
+
+create table virtualmachine(idmachine int not null primary key auto_increment,name varchar(40) not null, ip varchar(40) not null, os varchar(40) not null);
+
+
+create table useraccess(id_user int(6) not null, id_machine int(6) not null);
