@@ -7,11 +7,41 @@ if (!isset($_SESSION['user_s']) || !isset($_SESSION['machine'])) {
 
 <html>
     <head>
+    <link rel="stylesheet" href="terminal.css">
+    <style>
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
 
-        <body>
-            <a href="logout.php">Logout</a>
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+
+</style>
+        <body background="ptTW1.svg">
+        <div class="topnav">
+  <a href="logout.php">Log out</a>
+  
+</div>
             <div class="div1">
-                <p>Introduceti comanda</p>
+                
                 <form method="POST">
                     <input type='text' name='comandaTerm'>
 	            </form>
@@ -29,7 +59,7 @@ if (!isset($_SESSION['user_s']) || !isset($_SESSION['machine'])) {
 <?php 
 
 $port = $_SESSION['machine']+11000;
-echo $port;
+//echo $port;
 if(isset($_POST['comandaTerm'])){
     
     $command = $_POST['comandaTerm'];

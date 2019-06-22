@@ -3,12 +3,44 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <link rel="stylesheet" href="register.css">
+            <style>
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+input[type=submit]
+{
+    padding:10px 113px;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: rgba(9, 33, 41, 0.2);
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  
+}
+
+.topnav a:hover {
+  background-color:#ddd;
+  color: black;
+}
+
+
+</style>
 </head>
 <body background="ptTW.png">
-
-<form action="logout.php">
-    <input type="submit" name="log_out" value="Log out" />
-</form>
+<div class="topnav">
+  <a href="logout.php">Log out</a>
+  
+</div>
 
         <br/>
         <h1>penGUIniX Virtual Machine</h1>
@@ -39,10 +71,7 @@
                 <!-- <button class="buton2">Register</button> -->
     </form>
 
-    <form method="POST">
-        <input type="text">
-        <button type="submit" name="test">"Test"</button>
-    </form>
+
 
 
 </div>
