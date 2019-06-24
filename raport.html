@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>penGUIniX</title>
+    <link rel="stylesheet" href="doc_style.css">
+</head>
+
+<body prefix="schema: http://schema.org">
+
+    <article resource="#" typeof="schema:ScholarlyArticle">
+        <header></header>
+            <h1 property="schema:name">penGUIniX - documentatie</h1>
+        </header>
+    </article>
+    <section typeof="sa:AuthorsList">
+        <h2>Autori</h2>
+        <ul>
+            <li typeof="sa:ContributorRole" property="schema:author">
+                <span typeof="schema:Person">
+            <meta property="schema:givenName" content="Stefan">
+            <meta property="schema:familyName" content="Craciun">
+            <span property="schema:name">Craciun Stefan</span>
+                </span>
+            </li>
+            <li typeof="sa:ContributorRole" property="schema:author">
+                <span typeof="schema:Person">
+            <meta property="schema:givenName" content="Claudiu">
+            <meta property="schema:additionalName" content="Alexandru">
+            <meta property="schema:familyName" content="Tinca">
+            <span property="schema:name">Tinca Claudiu-Alexandru</span>
+                </span>
+            </li>
+            <li typeof="sa:ContributorRole" property="schema:author">
+                <span typeof="schema:Person">
+              <meta property="schema:givenName" content="Irina">
+              <meta property="schema:familyName" content="Apostol">
+              <span property="schema:name">Apostol Irina</span>
+                </span>
+            </li>
+    </section>
+
+    <section id="introduction" role="doc-introduction">
+        
+        <h2>Introducere</h2>
+        <p>
+            penGUIniX isi propune sa fie o platforma online de gestiune a unor masini virtuale, oferindui clientului o interfata prietenoasa si acces rapid catre masinile sale.
+        </p>
+    </section>
+
+    <section id="Api">
+        <h2>Comportament</h2>
+        <p>
+            <span typeof="schema:Action">
+        Aplicatia are la baza comunicarea dintre webserver si masinile virtuale/serverele create pentru clienti, prin intermediul unui server proxy. 
+        Clientul isi va crea un cont si la cererea acestuia i se vor crea masinile dorite si va primi permisiuni pentru acestea.
+        Altfel, se logheaza in cont, din care poate accesa una din masinile virtuale pentru care are permisiuni si poate rula comenzi pe masina dorita.
+        Comanda dorita este trimisa la masina virtuala, este executata pe aceasta, iar output-ul este trimis inapoi si este afisat pe pagina "terminal".
+        
+      
+            </span>
+        </p>
+    </section>
+
+
+
+    <section id="gestiune informatii">
+        <h2>Gestiune informatii</h2>
+        <p>
+            Informatiile despre useri, masinile virtuale si permisiuni sunt stocate intr-o baza de date.
+            Masinile virtuale/serverele sunt create de catre adminul webserverului, iar logandu-ne intr-un cont "admin" ii vom putea oferi clientului permisiuni pentru masina virtuala creata.
+            Permisiunile clientilor pentru masinile virtuale sunt stocate intr-o tabela cu 2 coloane(id_user si id_machine).
+        </p>
+        <p>
+            Comunicarea dintre webserver si masinile virtuale s-a realizat folosind agenti, masinile virtuale initiind un tunel ssh la pornire care aduce portul acesteia pe proxy.
+        </p>
+    </section>
+
+    <section id="tehnologii">
+            <h2>Tehnologii</h2>
+            <p>
+                Pentru serverul web am folosit HTML, CSS si PHP.
+            </p>
+            <p>
+                Agentii si serverul proxy au fost scrisi in C si s-a folosit ssh.
+            </p>
+        </section>
+
+    <section id="cod-sursa">
+        <h2>Cod sursa</h2>
+        Codul sursa a fost manageriat folosind platforma github, iar modificarile au fost urcate de fiecare coechipier.
+    </section>
+
+</body>
+
+</html>
